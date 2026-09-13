@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michelin Marketing Analytics — Xiuhan (Lydia) Chen</title>
+<meta name="description" content="An LLM extraction pipeline and PCA across 18,422 Michelin-listed restaurants, showing that execution — not ambience — separates the star tiers.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%93%8A</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-logo" href="index.html">Lydia Chen</a>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="projects.html" class="is-active">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="detail-head">
+    <div class="wrap">
+      <a class="back-link" href="projects.html">Back to projects</a>
+      <h1>Michelin Marketing Analytics</h1>
+      <p class="detail-role">LLM extraction pipeline and principal component analysis</p>
+      <p class="detail-meta"><span>Team of 5</span><span>Xiuhan Chen, Sarah Cho, Zixin Meng, Yueqi Lyu, Verena Amanda</span></p>
+      <ul class="tags">
+        <li>AI/LLM Automation</li>
+        <li>Data Analysis</li>
+        <li>Prompt Engineering</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="detail-hero img-ph ph-16x9" data-asset="assets/michelin/cover.png">assets/michelin/cover.png</div>
+  </div>
+
+  <article class="wrap detail-body">
+    <section class="chapter">
+      <div class="prose">
+        <p>The question: across 18,422 Michelin-listed restaurants in 19 countries, what actually separates a 3-star restaurant from a 0-star one — food, or something else?</p>
+        <p>I designed the taxonomy and extraction pipeline this analysis sits on. Michelin inspector write-ups are unstructured prose, so I built a strict, evidence-only prompt for GPT-4.1-mini — the model could only flag an attribute as "mentioned" if it could point to literal wording, with explicit invalid-inference examples built into the prompt to stop it reading things into the text that weren't there. I'd originally tried sentiment scoring on a pilot sample, found Michelin inspectors basically never write anything negative regardless of star tier, and pivoted the entire approach to binary attribute-mention detection instead — a real methodology correction, not a first-try success.</p>
+      </div>
+
+      <div class="stat-band">
+        <div>
+          <span class="stat-num">18,422</span>
+          <p class="stat-label">restaurants across 19 countries</p>
+        </div>
+        <div>
+          <span class="stat-num">68.5%</span>
+          <p class="stat-label">of variance explained by one component: "Practical Value to Culinary Mastery"</p>
+        </div>
+        <div>
+          <span class="stat-num">25.5%</span>
+          <p class="stat-label">explained by the second component behind the perceptual map</p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>That produced structured data across 8 attribute categories for all 18,422 restaurants, which I ran through a PCA. A single component — "Practical Value to Culinary Mastery" — explained roughly 68.5% of the variance between restaurants: the thing that actually separates Michelin tiers is food and service execution, not ambience, not price. A second component (~25.5%) let us build a perceptual map showing the story arc from 0-star (competing on price and accessibility) to 3-star ("ritualized perfection" — precision, environment, timing, and emotion, all at once).</p>
+      </div>
+
+      <ul class="link-list">
+        <li>
+          <a href="https://drive.google.com/drive/folders/1P9UM2iPpLMjSWZ-BCuNPsp1yfUKhINB3" target="_blank" rel="noopener">Full analysis, taxonomy, and code
+            <span class="link-note">Google Drive</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </article>
+
+  <div class="wrap">
+    <nav class="next-nav">
+      <a href="projects.html">All projects</a>
+      <a href="projects-stylemuse.html">Next: Style Muse</a>
+    </nav>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p class="footer-note">Columbia Business School, MS Marketing Science — expected Feb 2027</p>
+    <div class="footer-links">
+      <a href="mailto:XiuChen27@gsb.columbia.edu">XiuChen27@gsb.columbia.edu</a>
+      <a href="https://linkedin.com/in/xiuhan-lydia-chen" target="_blank" rel="noopener">linkedin.com/in/xiuhan-lydia-chen</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
