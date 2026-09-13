@@ -183,28 +183,64 @@ img { max-width: 100%; display: block; }
   font-weight: 400;
 }
 
-.type {
-  color: var(--accent);
-  font-style: italic;
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
 }
 
-.caret {
-  display: inline-block;
-  width: 2px;
-  height: 0.82em;
-  margin-left: 3px;
-  vertical-align: -0.08em;
-  background: var(--accent);
-  animation: blink 1.05s steps(1) infinite;
+.hero-line,
+.hero-roles,
+.hero-sub,
+.hero-cta {
+  opacity: 0;
+  animation: rise 0.62s ease forwards;
 }
 
-@keyframes blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
-}
+.hero-line { animation-delay: 0.04s; }
+.hero-roles { animation-delay: 0.16s; }
+.hero-sub { animation-delay: 0.26s; }
+.hero-cta { animation-delay: 0.34s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .caret { animation: none; opacity: 1; }
+  .hero-line,
+  .hero-roles,
+  .hero-sub,
+  .hero-cta {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}
+
+.hero-roles {
+  list-style: none;
+  margin: 30px 0 0;
+  padding: 22px 0 0;
+  border-top: 1px solid var(--line);
+  max-width: 30ch;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.02rem, 1.7vw, 1.22rem);
+  color: var(--accent);
+  line-height: 1.35;
+}
+
+@media (min-width: 820px) {
+  .hero-roles {
+    max-width: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px 0;
+  }
+
+  .hero-roles li:not(:last-child)::after {
+    content: '/';
+    color: var(--accent-2);
+    margin: 0 14px;
+  }
 }
 
 .hero-sub {
@@ -343,7 +379,7 @@ img { max-width: 100%; display: block; }
 
 /* Logo covers sit on their own white ground, so give them room to breathe */
 .card-thumb.thumb-logo {
-  background: #FFFFFF;
+  background: var(--logo-bg, #FFFFFF);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -713,6 +749,9 @@ img { max-width: 100%; display: block; }
 }
 
 .zoom-btn:hover { background: var(--ink); }
+
+/* display:flex would otherwise beat the UA rule for [hidden] */
+.lightbox[hidden] { display: none; }
 
 .lightbox {
   position: fixed;
