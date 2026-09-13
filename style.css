@@ -961,3 +961,29 @@ img { max-width: 100%; display: block; }
 }
 
 .footer-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ===========================================================
+   Language switcher
+=========================================================== */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-lang {
+  font-size: 0.85rem;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 13px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-lang:hover { color: var(--accent); border-color: var(--accent); }
+
+@media (max-width: 560px) {
+  .nav-right { gap: 12px; }
+  .nav-lang { font-size: 0.78rem; padding: 4px 10px; }
+}
