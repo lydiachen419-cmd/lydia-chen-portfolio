@@ -325,11 +325,21 @@ img { max-width: 100%; display: block; }
 
 .card-thumb {
   aspect-ratio: 16 / 10;
-  border-radius: 0;
-  border: 0;
-  border-bottom: 1px dashed var(--line);
+  border-bottom: 1px solid var(--line-soft);
   background: var(--bg-sunk);
+  overflow: hidden;
 }
+
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.card:hover .card-thumb img { transform: scale(1.03); }
+
+.card-thumb.thumb-top img { object-position: center top; }
 
 .card-body {
   padding: 24px 26px 26px;
@@ -417,6 +427,21 @@ img { max-width: 100%; display: block; }
   max-width: 210px;
 }
 
+/* Vertical clips keep their own aspect ratio rather than being cropped */
+.media-video {
+  margin: 0;
+  flex: 0 1 210px;
+  max-width: 210px;
+}
+
+.media-video video {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  background: var(--bg-sunk);
+}
+
 /* ===========================================================
    Detail pages
 =========================================================== */
@@ -456,8 +481,20 @@ img { max-width: 100%; display: block; }
 }
 
 .detail-hero {
-  margin-bottom: clamp(36px, 6vh, 60px);
+  margin: 0 0 clamp(36px, 6vh, 60px);
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-sunk);
 }
+
+.detail-hero img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.detail-hero.hero-top img { object-position: center 22%; }
 
 .detail-intro {
   font-family: var(--serif);
@@ -515,6 +552,29 @@ img { max-width: 100%; display: block; }
 }
 
 .media-row .ph-16x9 { flex: 1 1 300px; width: auto; }
+
+.media-row figure { margin: 0; }
+
+.shot { flex: 1 1 320px; min-width: 0; }
+
+.shot img {
+  width: 100%;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  background: var(--bg-sunk);
+}
+
+.shot-portrait {
+  flex: 0 1 210px;
+  max-width: 210px;
+}
+
+.media-row figcaption {
+  margin-top: 9px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
 
 .pull {
   font-family: var(--serif);

@@ -1,1 +1,4 @@
 .DS_Store
+
+# raw camera/screen-recording originals, kept locally only
+assets/_originals/
