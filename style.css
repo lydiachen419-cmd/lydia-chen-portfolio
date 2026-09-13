@@ -341,6 +341,22 @@ img { max-width: 100%; display: block; }
 
 .card-thumb.thumb-top img { object-position: center top; }
 
+/* Logo covers sit on their own white ground, so give them room to breathe */
+.card-thumb.thumb-logo {
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-thumb.thumb-logo img {
+  width: 62%;
+  height: auto;
+  object-fit: contain;
+}
+
+.card:hover .card-thumb.thumb-logo img { transform: scale(1.05); }
+
 .card-body {
   padding: 24px 26px 26px;
   display: flex;
@@ -661,6 +677,100 @@ img { max-width: 100%; display: block; }
 
 .next-nav a { color: var(--accent); }
 .next-nav a:hover { border-bottom: 1px solid var(--accent); }
+
+/* ===========================================================
+   Lightbox
+=========================================================== */
+.is-zoomable { cursor: zoom-in; }
+
+.shot img.is-zoomable,
+.shot-portrait img.is-zoomable,
+.detail-hero img.is-zoomable {
+  transition: opacity 0.2s ease;
+}
+
+.shot img.is-zoomable:hover,
+.shot-portrait img.is-zoomable:hover,
+.detail-hero img.is-zoomable:hover {
+  opacity: 0.88;
+}
+
+.media-video { position: relative; }
+
+.zoom-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  padding: 5px 11px;
+  border-radius: 999px;
+  border: 0;
+  background: color-mix(in srgb, var(--ink) 74%, transparent);
+  color: var(--bg);
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+
+.zoom-btn:hover { background: var(--ink); }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--ink) 93%, transparent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: clamp(20px, 5vw, 56px);
+  cursor: zoom-out;
+}
+
+.lightbox-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 84vh;
+}
+
+.lightbox-stage img,
+.lightbox-stage video {
+  max-width: 100%;
+  max-height: 84vh;
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+  cursor: default;
+  background: var(--bg-sunk);
+}
+
+.lightbox-caption {
+  color: var(--bg);
+  font-size: 0.88rem;
+  text-align: center;
+  max-width: 62ch;
+  opacity: 0.82;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: clamp(12px, 3vw, 26px);
+  right: clamp(12px, 3vw, 26px);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--bg) 40%, transparent);
+  background: transparent;
+  color: var(--bg);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-close:hover { background: color-mix(in srgb, var(--bg) 16%, transparent); }
 
 /* ===========================================================
    About page
