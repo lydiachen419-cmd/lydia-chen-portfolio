@@ -1,7 +1,7 @@
 // Click any figure image or clip to open it full size.
 (function () {
   const items = document.querySelectorAll(
-    '.media-row figure img, .media-row figure video, .detail-hero img'
+    '.media-row figure img, .media-row figure video, .detail-hero img, .highlight-grid figure img'
   );
   if (!items.length) return;
 

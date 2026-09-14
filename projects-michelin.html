@@ -46,7 +46,7 @@
   </section>
 
   <div class="wrap">
-    <figure class="detail-hero"><img src="assets/michelin/perceptual-map.png" alt="Perceptual map of Michelin restaurants by star tier"></figure>
+    <figure class="detail-hero"><img src="assets/michelin/taxonomy-extraction.png" alt="Attribute taxonomy and LLM extraction design"></figure>
   </div>
 
   <article class="wrap detail-body">
@@ -75,11 +75,26 @@
         <p>That produced structured data across 8 attribute categories for all 18,422 restaurants, which I ran through a PCA. A single component — "Practical Value to Culinary Mastery" — explained roughly 68.5% of the variance between restaurants: the thing that actually separates Michelin tiers is food and service execution, not ambience, not price. A second component (~25.5%) let us build a perceptual map showing the story arc from 0-star (competing on price and accessibility) to 3-star ("ritualized perfection" — precision, environment, timing, and emotion, all at once).</p>
       </div>
 
-        <div class="media-row">
-          <figure class="shot"><img src="assets/michelin/data-overview.png" alt="Data overview of 18,422 Michelin listed restaurants across 19 countries" loading="lazy"><figcaption>The dataset — 18,422 restaurants across 19 countries</figcaption></figure>
-          <figure class="shot"><img src="assets/michelin/taxonomy-extraction.png" alt="Attribute taxonomy and LLM extraction design across eight categories" loading="lazy"><figcaption>The taxonomy and evidence-only extraction design I built the pipeline around</figcaption></figure>
-          <figure class="shot"><img src="assets/michelin/pca.png" alt="PCA results showing the first component explaining most variance" loading="lazy"><figcaption>PCA — one component, Practical Value to Culinary Mastery, dominates</figcaption></figure>
+        <section class="highlights">
+        <div class="highlight-grid">
+          <figure class="highlight">
+            <img src="assets/michelin/pca.png" alt="PCA results" loading="lazy">
+            <figcaption>PCA — one component explains 68.5% of the variance</figcaption>
+          </figure>
+          <figure class="highlight">
+            <img src="assets/michelin/perceptual-map.png" alt="Perceptual map of restaurants by star tier" loading="lazy">
+            <figcaption>Perceptual map — restaurants by star tier</figcaption>
+          </figure>
+          <figure class="highlight">
+            <img src="assets/michelin/regression.png" alt="Text-based regression results" loading="lazy">
+            <figcaption>Text-based regression — cleanliness as a threshold effect</figcaption>
+          </figure>
+          <figure class="highlight">
+            <img src="assets/michelin/attribute-loading.png" alt="PCA attribute loadings table" loading="lazy">
+            <figcaption>PCA attribute loadings</figcaption>
+          </figure>
         </div>
+      </section>
 
       <ul class="link-list">
         <li>

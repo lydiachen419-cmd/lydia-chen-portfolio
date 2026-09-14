@@ -552,7 +552,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--serif);
   font-size: clamp(1.15rem, 2.2vw, 1.42rem);
   line-height: 1.5;
-  max-width: 48ch;
+  max-width: 62ch;
   margin-bottom: clamp(40px, 6vh, 64px);
   padding-left: 22px;
   border-left: 2px solid var(--accent-2);
@@ -590,9 +590,17 @@ img { max-width: 100%; display: block; }
 .chapter .tags { margin-bottom: 24px; }
 
 .prose p {
-  max-width: var(--measure);
+  max-width: none;
   margin-bottom: 1.15em;
 }
+
+.prose h3 {
+  font-size: 1.2rem;
+  margin: 1.9em 0 0.55em;
+  color: var(--ink);
+}
+
+.prose h3:first-child { margin-top: 0; }
 
 .prose p:last-child { margin-bottom: 0; }
 
@@ -607,7 +615,7 @@ img { max-width: 100%; display: block; }
 
 .media-row figure { margin: 0; }
 
-.shot { flex: 1 1 320px; min-width: 0; }
+.shot { flex: 1 1 430px; min-width: 0; }
 
 .shot img {
   width: 100%;
@@ -670,7 +678,6 @@ img { max-width: 100%; display: block; }
   display: flex;
   flex-direction: column;
   gap: 2px;
-  max-width: var(--measure);
 }
 
 .link-list a {
@@ -986,4 +993,44 @@ img { max-width: 100%; display: block; }
 @media (max-width: 560px) {
   .nav-right { gap: 12px; }
   .nav-lang { font-size: 0.78rem; padding: 4px 10px; }
+}
+
+
+/* ===========================================================
+   Key slides
+=========================================================== */
+.highlights {
+  margin-top: 46px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 26px;
+}
+
+@media (max-width: 700px) {
+  .highlight-grid { grid-template-columns: 1fr; }
+}
+
+/* a dense slide that needs the whole row to stay readable */
+.highlight-wide { grid-column: 1 / -1; }
+
+.highlight { margin: 0; }
+
+.highlight img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  background: var(--bg-sunk);
+}
+
+.highlight figcaption {
+  margin-top: 11px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--muted);
 }
