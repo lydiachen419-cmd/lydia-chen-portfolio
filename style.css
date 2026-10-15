@@ -1034,3 +1034,66 @@ img { max-width: 100%; display: block; }
   line-height: 1.6;
   color: var(--muted);
 }
+
+/* Compact STAR narratives, aligned with the slide width. */
+.star-story { margin-top: 28px; }
+.star-row { display: grid; grid-template-columns: 88px minmax(0,1fr); gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line-soft); }
+.prose.star-story .star-row h3 { font-family: var(--sans); font-size: .88rem; color: var(--muted); margin: 3px 0 0; }
+.prose.star-story .star-row p { margin: 0; }
+.star-row:last-child { border-bottom: 0; }
+.star-row:last-child h3 { color: var(--accent); }
+@media(max-width:560px) { .star-row { grid-template-columns: 1fr; gap: 7px; } }
+
+
+.automation-flow { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; padding-left:24px; margin-top:24px; }
+.automation-flow p { color:var(--muted); margin-top:8px; }
+@media(max-width:560px) { .automation-flow { grid-template-columns:1fr; } }
+
+
+/* Homepage portrait alongside the introduction. */
+.hero-intro-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(220px,300px); gap:clamp(32px,5vw,64px); align-items:center; }
+.hero-copy { min-width:0; }
+.hero-portrait { margin:0; }
+.hero-portrait img { display:block; width:100%; height:auto; border-radius:12px; border:1px solid var(--line-soft); }
+@media(max-width:760px) { .hero-intro-grid { grid-template-columns:1fr; gap:32px; } .hero-portrait { width:min(100%,280px); } }
+
+.star-row { grid-template-columns:100px minmax(0,1fr); }
+@media(max-width:560px) { .star-row { grid-template-columns:1fr; } }
+
+.capabilities {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px 30px;
+  margin-top: 46px;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.capability h3 {
+  font-size: 1.02rem;
+  margin-bottom: 8px;
+}
+
+.capability p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 860px) {
+  .capabilities { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 460px) {
+  .capabilities { grid-template-columns: 1fr; gap: 22px; }
+}
+
+
+.capability-head {
+  grid-column: 1 / -1;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--accent-2);
+  margin-bottom: -8px;
+}

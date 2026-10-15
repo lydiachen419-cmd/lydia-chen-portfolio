@@ -51,29 +51,11 @@
 
   <article class="wrap detail-body">
     <section class="chapter">
-      <div class="prose">
-        <p>The question: across 18,422 Michelin-listed restaurants in 19 countries, what actually separates a 3-star restaurant from a 0-star one — food, or something else?</p>
-        <p>I designed the taxonomy and extraction pipeline this analysis sits on. Michelin inspector write-ups are unstructured prose, so I built a strict, evidence-only prompt for GPT-4.1-mini — the model could only flag an attribute as "mentioned" if it could point to literal wording, with explicit invalid-inference examples built into the prompt to stop it reading things into the text that weren't there. I'd originally tried sentiment scoring on a pilot sample, found Michelin inspectors basically never write anything negative regardless of star tier, and pivoted the entire approach to binary attribute-mention detection instead — a real methodology correction, not a first-try success.</p>
-      </div>
+      <div class="prose star-story"><div class="star-row"><h3>Situation</h3><p>Unstructured inspector descriptions made it difficult to compare 18,422 restaurants across 19 countries.</p></div><div class="star-row"><h3>Task</h3><p>Design the taxonomy and extraction pipeline for an interpretable comparison of rating tiers.</p></div><div class="star-row"><h3>Action</h3><p>Built evidence-only GPT-4.1-mini extraction; pivoted from uninformative sentiment scores to attribute tagging, then used PCA and text-based regression.</p></div><div class="star-row"><h3>Result</h3><p>The first component explained about 68.5% of variance. Findings distinguished food/service execution and a cleanliness threshold effect. These are statistical associations, not causal effects.</p></div></div>
 
-      <div class="stat-band">
-        <div>
-          <span class="stat-num">18,422</span>
-          <p class="stat-label">restaurants across 19 countries</p>
-        </div>
-        <div>
-          <span class="stat-num">68.5%</span>
-          <p class="stat-label">of variance explained by one component: "Practical Value to Culinary Mastery"</p>
-        </div>
-        <div>
-          <span class="stat-num">25.5%</span>
-          <p class="stat-label">explained by the second component behind the perceptual map</p>
-        </div>
-      </div>
 
-      <div class="prose">
-        <p>That produced structured data across 8 attribute categories for all 18,422 restaurants, which I ran through a PCA. A single component — "Practical Value to Culinary Mastery" — explained roughly 68.5% of the variance between restaurants: the thing that actually separates Michelin tiers is food and service execution, not ambience, not price. A second component (~25.5%) let us build a perceptual map showing the story arc from 0-star (competing on price and accessibility) to 3-star ("ritualized perfection" — precision, environment, timing, and emotion, all at once).</p>
-      </div>
+
+
 
         <section class="highlights">
         <div class="highlight-grid">
